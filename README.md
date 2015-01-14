@@ -33,14 +33,14 @@ After completing this assignment, you should be able to effectively...
 ### Deliverables
 
 * **A Drawing.** Draw your classes, their methods, their instance variables, and their relationships out on a piece of paper.  At the conclusion of your work, make sure to give the paper to your instructor.
-* **A Repository.** Create your own github repository.  Call it `battleship_objects`.
-* **A README.** Create a `README.md` file.  Describe each of your classes individually in the README.  Include a description of each method (behavior) you're giving them.  You should start this before writing any code, but it's fine (and good) if you modify it as you code later.
+* **A Repository.** Fork this repository.
+* **A README.** Wipe out this README file and create your own.  Describe each of your classes individually in the README.  Include a description of each method (behavior) you're giving them.  You should start this before writing any code, but it's fine (and good) if you modify it as you code later.
 * **Ruby Files Containing Classes.** Create one `.rb` file for each of your classes.  
 * **One Ruby File Instantiating Objects.** After your classes exist, it will be time to bring them all together.  You'll create an additional ruby file called "battleship_objects.rb" and write code in that file that instantiates each of your objects (HINT: this means calling `.new` on each class and passing it the appropriate information).
 
 After you fulfill each requirement below, `git add` and `git commit`.  After your work is complete, make sure to `git push` to get your changes up to github.  Feel free to push more than once along the way, of course.
 
-Send the link to your repository to your instructor.
+Make a pull request when you're done.
 
 ### Requirements
 
@@ -65,4 +65,4 @@ Meet all requirements given above.
 
 ## Hard Mode
 
-Actually implement one method for each of the classes you've written.  Then call it in `battleship.rb` in a meaningful way.
+Actually implement one method for each of the classes you've written.  Then call your implemented methods in the overarching `battleship.rb` in a meaningful way.
