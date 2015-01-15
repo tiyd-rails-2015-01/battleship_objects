@@ -18,4 +18,4 @@ My Battleship game will have 5 classes:
 * The Ship class will contain the methods ship_placement, ship_hit, and ship_sunk
 * The Board class will contain the methods place_ships, shot, and display_board
 * The Player class will contain the method choose_target
-* The BattleshipObjects class will contain methods which instantiates objects from other classes
+* The BattleshipObjects class will contain methods which instantiate objects from other classes
