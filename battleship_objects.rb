@@ -12,7 +12,7 @@ destroyer = Ship.new("Destroyer", 2)
 player_1 = Player.new(player_1)
 player_2 = Player.new(player_2)
 
-board_1 = Board.new("Player One's Board")
-board_2 = Board.new("Player Two's Board")
+board_1 = Board.new
+board_2 = Board.new
 
 game = Game.new
