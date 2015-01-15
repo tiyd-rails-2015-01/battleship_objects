@@ -2,67 +2,228 @@
 
 ## Description
 
-Create a set of classes to represent concepts from the game of Battleship.  
+A set of classes that represent concepts from the game of Battleship.  
 
-## Objectives
+## Objects
 
-### Learning Objectives
+### NewGame
+Instance Variable
+ * Desire To Play
+  * Toggles on and off to activate the game
 
-After completing this assignment, you should...
+Methods
+  * Play Now
+    * The opening screen that collects input from the user that indicates that they want to start playing
+  * Play Again
+    * A prompt for the person at the end of the game to check if they want to keep playing
+  * Board Setup
+    * A method triggered by either of the first two that activates the various arrangement/placement activities contained within the boards.  
 
-* Understand and be able to define "class"
-* Understand and be able to define "object"
-* Understand and be able to define "method"
-* Understand when and why methods require parameters
-* Understand mappings between simple real-world concepts and their code representation in classes and methods
-* Understand how a Ruby application can span more than one file on disk
-* Understand simple inheritance
+### OmniscientMachine
+Instance Variable
+  * Person Board
+    * This class handles any miscellaneous tricky bits resulting from the fact that instead of two humans playing, it's a human and a computer, and the computer simultaneously contains all information about the human's board while it also guesses randomly about it
 
-### Performance Objectives
+Method
+  * Check Ship Placement
+    * For example, the computer shouldn't know where the person's ships are, but it should know when they've all been placed, so it can prompt the user accordingly with a reminder or start the gameplay
 
-After completing this assignment, you should be able to effectively...
+### Players
+Instance Variables
+  * Player Fleshy
+  * Player Machine
 
-* Create repository READMEs
-* Write classes
-* Write initializers
-* Instantiate objects
-* Use code in multiple files to solve one problem
+  These players (fleshy being the human person, referred to as person from here on out, and machine being the computer, just to make it explicitly clear that this is neither a real-life game nor a simulation of both sides on the computer)
 
-## Details
+Method
+  * Take Turns
+   * Triggered by the completed ship placement; toggles between the two players until someone wins
 
-### Deliverables
+### PlayerFleshy
+Instance Variables
+  * Person Board
+  * Person Turn
+  * Name
 
-* **A Drawing.** Draw your classes, their methods, their instance variables, and their relationships out on a piece of paper.  At the conclusion of your work, make sure to give the paper to your instructor.
-* **A Repository.** Fork this repository.
-* **A README.** Wipe out this README file and create your own.  Describe each of your classes individually in the README.  Include a description of each method (behavior) you're giving them.  You should start this before writing any code, but it's fine (and good) if you modify it as you code later.
-* **Ruby Files Containing Classes.** Create one `.rb` file for each of your classes.  
-* **One Ruby File Instantiating Objects.** After your classes exist, it will be time to bring them all together.  You'll create an additional ruby file called "battleship_objects.rb" and write code in that file that instantiates each of your objects (HINT: this means calling `.new` on each class and passing it the appropriate information).
+Method
+  * Say Name
+    * This class is mostly a conceptual container, but it would be cool if the game incorporated the person's name
 
-After you fulfill each requirement below, `git add` and `git commit`.  After your work is complete, make sure to `git push` to get your changes up to github.  Feel free to push more than once along the way, of course.
+### PlayerMachine
+Instance Variables
+  * Computer Board
+  * Computer Turn
+  * Name
 
-Make a pull request when you're done.
+Method
+  * Say Name
+    * Perhaps it would select from an array of random names
 
-### Requirements
+### PersonTurn
+Instance Variable
+  * Turn Status
+    * Toggles to determine whether it is currently the person's turn
 
-* Each class should be in a separate file.  If the class is called `Ship`, then the file should be named `ship.rb`.
-* Each of your classes should have an initializer.  These initializers SHOULD have code in them to set all the instance variables you provided in your diagram.
-* All other methods you write for your classes will NOT need to have code in them.  You'll just be writing "stubs" for those.
-* At least one class should inherit from another class.
-* Consider the following behaviors.  They will all need to be executed during a game of Battleship.  Each of these behaviors will need to be a method, and you have to place them in the appropriate classes.  You DO NOT have to write code inside of them.  Just give them reasonable names and put them in the right places:
-  * Start a new game
-  * Place a ship on the game board
-  * Report whether a specific shot was a hit
-  * Display the game board
-  * Announce a winner
-* NOTE: This behavior list is not a complete list.  Add at least three other behaviors (methods) to your classes that will be needed over the course of the game.
-* `battleship_objects.rb` should instantiate at least one object from each class.  When the objects are created, make sure to set all of the instance variables appropriately.
+Method
+  * Take Turn
+    * Prompts the user to input specific coordinates they would like to hit on the computer's ocean
+  * Turn Results
+    * Updates the target grid with the results of the shot (by triggering the insert peg method) and provides a message like "Miss", or "You hit/sunk my battleship"
+    * Updates the computer's ocean grid by inserting a peg in a ship if necessary
 
-## Normal Mode
+### PersonBoard
+Instance Variables
+  * Person Target
+  * Person Ocean
+  * Person Status
+  * Ships
+  * Pegs
 
-When you talk about the game of Battleship, you use lots of nouns.  The first step in good object/class design is to list out those nouns and the things they need to do.  Consider these nouns, map out their state (which will translate to instance methods) and their behavior (which will translate to methods), then implement them in code.
+  These are all sub-classes contained within the board.  
 
-Meet all requirements given above.
+Methods
+  * Clear Board
+    * Clears all data and resets everything at the end of the game
+  * Display Board
+    * Unlike the computer, the person will need to see their board on the screen
 
-## Hard Mode
+### PersonOcean
+Instance Variables
+  * Grid Squares
+  * Ships
 
-Actually implement one method for each of the classes you've written.  Then call your implemented methods in the overarching `battleship.rb` in a meaningful way.
+Methods
+  * Arrange Grid
+    * Uses all the grid squares with their own coordinates to create a visible grid for the user
+  * Place Ships
+    * Will prompt the user to place the given ships on the grid
+
+### PersonTarget
+Instance Variables
+  * Grid Squares
+  * Pegs
+
+Methods
+
+  * Arrange Grid
+    * Uses all the grid squares with their own coordinates to create a visible grid for the user
+  * Insert Peg
+    * Inserts either a red or white peg to track whether the shot was a hit or a miss
+
+### PersonStatus
+Instance Variables
+  * Status
+    * Whether the person has won or lost the game
+  * Sink Count
+    * Tracks how many of their opponent's ships have been sunk
+
+Methods
+  * Check Status
+  * Add Sunken Ship
+  * Check Sink Count
+  * Win Game
+    * When all 5 ships are sunk, it triggers a win for the person, and announces the end of the game
+
+### ComputerTurn
+Instance Variable
+  * Turn Status
+    * Toggles to determine whether it is currently the computer's turn
+
+Method
+  * Take Turn
+    * Chooses a set of coordinates for the computer to hit either randomly, or in the vicinity of ships that are partially hit but not yet sunk
+  * Turn Results
+    * Updates the target grid with the results of the shot
+    * Updates the person's ocean grid by inserting a peg in a ship if necessary
+
+### ComputerBoard
+Instance Variables
+  * Computer Target
+  * Computer Ocean
+  * Computer Status
+  * Ships
+  * Pegs
+
+  These are all sub-classes contained within the board.  
+
+Method
+  * Clear Board
+    * Clears all data and resets everything at the end of the game
+
+### ComputerOcean
+Instance Variables
+  * Grid Squares
+  * Ships
+
+Methods
+  * Arrange Grid
+    * While the computer doesn't need to see the grid, it should be order prior to ship placement
+  * Place Ships
+    * Will randomly place the given ships on the grid
+
+### ComputerTarget
+Instance Variables
+  * Grid Squares
+  * Pegs
+
+Methods
+  * Arrange Grid
+    * While the computer doesn't need to see the grid, it should be in order so that ships can be targeted easily
+  * Insert Peg
+    * Inserts either a red or white peg to track whether the shot was a hit or a miss...again, not in a visual way, but a similar method to the person's can probably be used
+
+### ComputerStatus
+Instance Variables
+  * Status
+    * Whether the computer has won or lost the game
+  * Sink Count
+    * Tracks how many of its opponent's ships have been sunk
+
+Methods
+  * Check Status
+  * Add Sunken Ship
+  * Check Sink Count
+  * Win Game
+    * When all 5 ships are sunk, it triggers a win for the computer, and announces the end of the game
+
+### Ships
+Instance Variables:
+  * Name
+    * Each size of ship has a name: Carrier, Battleship, Cruiser, Submarine, Destroyer
+  * Size
+    * The size of the ship determines both its position on the board and how many hits it can sustain
+  * Position
+    * Describes where the ship is located on the grid.  Perhaps an array of coordinates?  Unless the squares are also numbered with integers for simplicity.
+  * Status
+    * The ship could be safe, partially hit, or sunk.
+
+Methods:
+  * Say Name
+    * Useful for calling out, "You sunk my ..."
+  * Check Status
+  * Be Hit
+    * Places a red peg on the hit square of the ship
+  * Sink
+    * When there are no safe squares on the ship, it is dead, and a peg goes up on the status board.
+
+### Pegs
+Instance Variables:
+  * Color
+    * Pegs are either red or white...or true/false
+
+Methods:
+  * Insert Peg
+    * Places a peg on the square or ship, specifying which color peg it is.
+
+### GridSquare
+Instance Variables:
+  * Coordinates
+    * Specifies the square's unique location on the grid
+  * Status
+    * Describes whether the square is empty, has a ship on it, or has a peg on it
+
+Methods:
+  * Show Status
+    * Displays the current status of the square
+  * Change Status
+    * Changes the current status of the square
