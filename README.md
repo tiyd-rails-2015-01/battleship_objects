@@ -10,6 +10,7 @@
       * Get coordinates
  * Decide who goes first
     * This can be a coin toss
+ 
 ### Round
  * Player one calls shot
  * Player two verifies shot
