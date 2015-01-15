@@ -29,7 +29,9 @@
         * Does shot sink ship
           * if yes You sank my battleship
             * are there ships left
-              * if yes player 2 turn
+              * if yes player 1 turn
+                * End of round return to top of loop
               * if no game over  
- * End of round
-hello
+
+### Game over
+ * Computer prints congratulations text 
