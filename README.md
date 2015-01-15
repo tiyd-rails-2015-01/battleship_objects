@@ -34,9 +34,9 @@
 ## Player Class
 
 ###instance variables:
-    - @playerNumber = playerNumber
-    - @winner = false
-    - @board = board
+  - @playerNumber = playerNumber
+  - @winner = false
+  - @board = board
     
 ###methods:
   - initialize( board, playerNumber )
