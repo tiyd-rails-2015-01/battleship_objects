@@ -37,12 +37,18 @@ Method
 Instance Variables
   * Person Board
   * Person Turn
-  Hmm, not certain if any important methods are in this class, but following the diagram it just seems to make sense to give each player a category to contain their boards and turns
+  * Name
+Method
+  * Say Name
+    * This class is mostly a conceptual container, but it would be cool if the game incorporated the person's name
 ### PlayerMachine
 Instance Variables
   * Computer Board
   * Computer Turn
-  Hmm, again, not certain if any important methods are in this class, but following the diagram it just seems to make sense to give each player a category to contain their boards and turns
+  * Name
+Method
+  * Say Name
+    * Perhaps it would select from an array of random names
 ### PersonTurn
 Instance Variable
   * Turn Status
@@ -154,7 +160,7 @@ Instance Variables:
   * Size
     * The size of the ship determines both its position on the board and how many hits it can sustain
   * Position
-    * Describes where the ship is located on the grid.  Perhaps an array of coordinates?
+    * Describes where the ship is located on the grid.  Perhaps an array of coordinates?  Unless the squares are also numbered for simplicity.
   * Status
     * The ship could be safe, partially hit, or sunk.
 Methods:
@@ -168,7 +174,7 @@ Methods:
 ### Pegs
 Instance Variables:
   * Color
-    * Pegs are either red or white.
+    * Pegs are either red or white...or true/false
 Methods:
   * Insert Peg
     * Places a peg on the square or ship, specifying which color peg it is.
