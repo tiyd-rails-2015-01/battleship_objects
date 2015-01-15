@@ -4,6 +4,7 @@ require './board.rb'
 require './game.rb'
 require './players.rb'
 #ship_name, target_qty, coordinates
+# coordinates are to be determined in a later piece of code
 carrier = Ship.new("Carrier", 5, coordinates)
 battleship = Ship.new('Battleship', 4, coordinates)
 cruiser = Ship.new("Cruiser", 3, coordinates)
@@ -11,6 +12,9 @@ submarine = Ship.new("Submarine", 3, coordinates)
 destroyer = Ship.new("Destroyer", 2, coordinates)
 
 game
+# here i was writing the code trying to figure out how I would break it out
+# to the other files.  As you can see I didn't get very far
+
 
 def greeting
   puts "Welcome to Battleship!"
