@@ -43,18 +43,24 @@ This class describes what players are capable of doing.
 ## Class: Board
 
 ### Methods
+size
 
+check_ship_placement
 
 ## Class: Game
 
 ### Methods
+new_game
+
 outcome
 
 who_won?
 
+announce_hit
+
 announce_winner
 
-
+display_game_board
 
 
 #
