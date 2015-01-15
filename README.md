@@ -32,6 +32,7 @@ Method
 Instance Variables
   * Player Fleshy
   * Player Machine
+
   These players (fleshy being the human person, referred to as person from here on out, and machine being the computer, just to make it explicitly clear that this is neither a real-life game nor a simulation of both sides on the computer)
 
 Method
@@ -77,6 +78,7 @@ Instance Variables
   * Person Status
   * Ships
   * Pegs
+
   These are all sub-classes contained within the board.  
 
 Methods
@@ -100,6 +102,7 @@ Methods
 Instance Variables
   * Grid Squares
   * Pegs
+
 Methods
 
   * Arrange Grid
@@ -140,6 +143,7 @@ Instance Variables
   * Computer Status
   * Ships
   * Pegs
+
   These are all sub-classes contained within the board.  
 
 Method
@@ -189,7 +193,7 @@ Instance Variables:
   * Size
     * The size of the ship determines both its position on the board and how many hits it can sustain
   * Position
-    * Describes where the ship is located on the grid.  Perhaps an array of coordinates?  Unless the squares are also numbered for simplicity.
+    * Describes where the ship is located on the grid.  Perhaps an array of coordinates?  Unless the squares are also numbered with integers for simplicity.
   * Status
     * The ship could be safe, partially hit, or sunk.
 
@@ -217,7 +221,7 @@ Instance Variables:
     * Specifies the square's unique location on the grid
   * Status
     * Describes whether the square is empty, has a ship on it, or has a peg on it
-    
+
 Methods:
   * Show Status
     * Displays the current status of the square
