@@ -10,7 +10,7 @@
       * Get coordinates
  * Decide who goes first
     * This can be a coin toss
-#### Round
+### Round
  * Player one calls shot
  * Player two verifies shot
   * Does it hit any coordinates of any of the ships
