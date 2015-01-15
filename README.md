@@ -1,64 +1,53 @@
 # Battleship Objects
-
 This file contains the descriptions of each class for a game of Battleship. All methods for each class are defined within.
 
 ## Class: Ship
-
 This class is for the ships in Battleship.
-
 ### Methods
 
-**.initialize(type, size):** Creates a ship with a name and a size.
+**initialize(type, size):** Creates a ship with a name and a size.
 
-**.get_hit:**
+**get_hit:** The ship is able to sustain damage.
 
-**.sunk?**
+**sunk?** Figures out whether or not the ship is sunk.
 
-position
+**hits_so_far:** Shows how many times the ship has been hit so far.
 
-orientation
+**position:** The ship has a position on the board.
 
-hits_so_far
-
-
+**orientation:** Whether or not the ship is horizontal or vertical.
 
 
 ## Class: Player
 This class describes what players are capable of doing.
-
 ### Methods
-* **.initialize(name):** Creates a new player with a name.
+**.initialize(name):** Creates a new player with a name.
 
-* **.place_ship:** Places a ship on the game board.
+**.place_ship:** Places a ship on the game board.
 
-* **.call_shot** Player calls a shot
+**.call_shot:** Player calls a shot.
 
-**.lost?**
+**.lost?:** Tells if the player has lost.
 
-**.number_of_ships**
+**.number_of_ships:** Holds how many ships the player has left.
 
 
 ## Class: Board
-
+This class holds the rules for the game boards.
 ### Methods
-size
+**initialize(size=10):** Creates a new game board with default size of 10x10.
 
-check_ship_placement
+**size:** The size of the game board.
 
 ## Class: Game
-
+This class holds all of the rules for the inner workings of the game.
 ### Methods
-new_game
+**new_game:** Creates a new game.
 
-outcome
+**outcome:** Shows who won and who lost.
 
-who_won?
+**announce_hit:** Announces when a player has scored a hit.
 
-announce_hit
+**announce_winner:** Announces the winner of the game.
 
-announce_winner
-
-display_game_board
-
-
-#
+**display_game_board:** Shows the player's game board.
