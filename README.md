@@ -9,8 +9,8 @@
 ### Player
  **Methods**
  * place_ships - Place ships on the board.
- * fire - Player selects where the would like to fire on the board.
- * ranking - Keeps track of how many ships a player has on the board, determining 'Rank' ie. 'Player1 is ahead with 5 ships remaining'.
+ * fire - Player selects where they would like to fire on the board.
+ * ranking - Keeps track of how many ships a player has on the board, determining 'Rank' ie. 'Player1 is ahead with 5 ships remaining'. Ranking also determines the game winner and loser. 
 
 ### Board
  **Methods**
