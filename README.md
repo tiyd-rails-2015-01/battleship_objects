@@ -37,8 +37,6 @@ This class describes what players are capable of doing.
 
 **.number_of_ships**
 
-### Methods
-
 
 ## Class: Board
 
