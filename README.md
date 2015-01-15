@@ -1,68 +1,46 @@
-# Battleship Objects
+# Battleship Classes
+This readme lists the classes and methods for each class in the battleship game.
 
-## Description
+## Game
 
-Create a set of classes to represent concepts from the game of Battleship.  
+Game is a class that enables you to make new games.
 
-## Objectives
+### Methods
 
-### Learning Objectives
+* initialize: Creates a new game
+* turn: Controls whose turn it is
 
-After completing this assignment, you should...
+## Player
 
-* Understand and be able to define "class"
-* Understand and be able to define "object"
-* Understand and be able to define "method"
-* Understand when and why methods require parameters
-* Understand mappings between simple real-world concepts and their code representation in classes and methods
-* Understand how a Ruby application can span more than one file on disk
-* Understand simple inheritance
+Each game has at least one player, the players can perform certain actions in the game
 
-### Performance Objectives
+### Methods
 
-After completing this assignment, you should be able to effectively...
+* initialize: Creates a new player
+* fire: player fires a shot
+* ships_sunk: controls what happens when a player has a ship sink
+* lose game: what happens when a player loses
 
-* Create repository READMEs
-* Write classes
-* Write initializers
-* Instantiate objects
-* Use code in multiple files to solve one problem
+## Board
+Board is a class to make the players board. Each player would have their own board,
+so there'd be an instance of board for each player.
 
-## Details
+### Methods
+* initialize: Creates a new board
+* ships_remaing: tells how many ships are still on the board
+* show: Shows players their board
+* coordinates: this defines the available coordinates on the board that ships can be placed on
+* fleet: a method containing the array of ships on the board
 
-### Deliverables
 
-* **A Drawing.** Draw your classes, their methods, their instance variables, and their relationships out on a piece of paper.  At the conclusion of your work, make sure to give the paper to your instructor.
-* **A Repository.** Fork this repository.
-* **A README.** Wipe out this README file and create your own.  Describe each of your classes individually in the README.  Include a description of each method (behavior) you're giving them.  You should start this before writing any code, but it's fine (and good) if you modify it as you code later.
-* **Ruby Files Containing Classes.** Create one `.rb` file for each of your classes.  
-* **One Ruby File Instantiating Objects.** After your classes exist, it will be time to bring them all together.  You'll create an additional ruby file called "battleship_objects.rb" and write code in that file that instantiates each of your objects (HINT: this means calling `.new` on each class and passing it the appropriate information).
+## Ship
 
-After you fulfill each requirement below, `git add` and `git commit`.  After your work is complete, make sure to `git push` to get your changes up to github.  Feel free to push more than once along the way, of course.
+Each board has ships
 
-Make a pull request when you're done.
+### Methods
 
-### Requirements
-
-* Each class should be in a separate file.  If the class is called `Ship`, then the file should be named `ship.rb`.
-* Each of your classes should have an initializer.  These initializers SHOULD have code in them to set all the instance variables you provided in your diagram.
-* All other methods you write for your classes will NOT need to have code in them.  You'll just be writing "stubs" for those.
-* At least one class should inherit from another class.
-* Consider the following behaviors.  They will all need to be executed during a game of Battleship.  Each of these behaviors will need to be a method, and you have to place them in the appropriate classes.  You DO NOT have to write code inside of them.  Just give them reasonable names and put them in the right places:
-  * Start a new game
-  * Place a ship on the game board
-  * Report whether a specific shot was a hit
-  * Display the game board
-  * Announce a winner
-* NOTE: This behavior list is not a complete list.  Add at least three other behaviors (methods) to your classes that will be needed over the course of the game.
-* `battleship_objects.rb` should instantiate at least one object from each class.  When the objects are created, make sure to set all of the instance variables appropriately.
-
-## Normal Mode
-
-When you talk about the game of Battleship, you use lots of nouns.  The first step in good object/class design is to list out those nouns and the things they need to do.  Consider these nouns, map out their state (which will translate to instance methods) and their behavior (which will translate to methods), then implement them in code.
-
-Meet all requirements given above.
-
-## Hard Mode
-
-Actually implement one method for each of the classes you've written.  Then call your implemented methods in the overarching `battleship.rb` in a meaningful way.
+* initialize: Create a new ship, pass in the name of the ship,the maximum amount of hits it can take, it's location and it's orientation (vertical or horizontal)
+* get_hit: What happens when a ship gets hit
+* location: every ship has a location on the board
+* hit_count: method that keeps track of how many times a ship has been hit
+* sunk: sinks the ship
