@@ -10,7 +10,7 @@
    end
 
    def lose
-     if @ship.length == 0
+     if @ship.to_a.length == 0
        puts "Game Over"
      else
        fleet
