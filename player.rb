@@ -6,6 +6,7 @@ class Player
     @playerNumber = playerNumber
     @winner = false
     @board = board
+    puts "Player initialized"
   end
 
   def makeMove( x, y, response)
@@ -16,7 +17,8 @@ class Player
     @board.markOpponentsGuess(x,y)
   end
 
-  def declareWinner
+  def isWinner?
+    #return true if winning conditions are met
   end
 
 end

@@ -7,12 +7,10 @@ class Board
     @targetGrid = Array.new( 10, Array.new(10))
     @sunkShips = 0
 
-    @carrier = Ship.new(5)
-    @battleship = Ship.new(4)
-    @cruiser = Ship.new(3)
-    @submarine = Ship.new(3)
-    @destroyer = Ship.new(2)
+    @ships = [ Ship.new(5), Ship.new(4), Ship.new(3), Ship.new(3), Ship.new(2) ]
     placeShips
+
+    puts "Board initialized"
   end
 
   def placeShips
@@ -23,9 +21,9 @@ class Board
     # submarine: 3
     # destroyer: 2
     # on a 10 x 10 board
-    5.times do
+    @ships.each do
       # place a ship
-      # puts "totally placing a ship"
+      puts "Board setup: totally placing a ship"
     end
   end
 

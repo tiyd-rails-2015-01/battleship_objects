@@ -3,6 +3,7 @@ class Ship
     @size = size
     @location = [nil,nil]
     @orientation = nil
+    puts "Ship initialized"
   end
 
   def setLocation(top,left,orientation)
