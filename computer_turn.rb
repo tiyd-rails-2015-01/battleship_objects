@@ -5,4 +5,7 @@ class ComputerTurn
 
   def take_turn
   end
+
+  def turn_results
+  end
 end

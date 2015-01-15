@@ -7,15 +7,42 @@ A set of classes that represent concepts from the game of Battleship.
 ## Objects
 
 ### NewGame
+Instance Variable
+ * Desire To Play
+  * Toggles on and off to activate the game
+Methods
+  * Play Now
+    * The opening screen that collects input from the user that indicates that they want to start playing
+  * Play Again
+    * A prompt for the person at the end of the game to check if they want to keep playing
+  * Board Setup
+    * A method triggered by either of the first two that activates the various arrangement/placement activities contained within the boards.  
+
 ### OmniscientMachine
 Instance Variable
   * Person Board
     * This class handles any miscellaneous tricky bits resulting from the fact that instead of two humans playing, it's a human and a computer, and the computer simultaneously contains all information about the human's board while it also guesses randomly about it
+Method
   * Check Ship Placement
-    * For example, the computer shouldn't know where the person's ships are, but it should know when they've all been placed, so it can prompt the user accordingly
+    * For example, the computer shouldn't know where the person's ships are, but it should know when they've all been placed, so it can prompt the user accordingly with a reminder or start the gameplay
 ### Players
+Instance Variables
+  * Player Fleshy
+  * Player Machine
+  These players (fleshy being the human person, referred to as person from here on out, and machine being the computer, just to make it explicitly clear that this is neither a real-life game nor a simulation of both sides on the computer)
+Method
+  * Take Turns
+   * Triggered by the completed ship placement; toggles between the two players until someone wins
 ### PlayerFleshy
+Instance Variables
+  * Person Board
+  * Person Turn
+  Hmm, not certain if any important methods are in this class, but following the diagram it just seems to make sense to give each player a category to contain their boards and turns
 ### PlayerMachine
+Instance Variables
+  * Computer Board
+  * Computer Turn
+  Hmm, again, not certain if any important methods are in this class, but following the diagram it just seems to make sense to give each player a category to contain their boards and turns
 ### PersonTurn
 Instance Variable
   * Turn Status
@@ -23,6 +50,9 @@ Instance Variable
 Method
   * Take Turn
     * Prompts the user to input specific coordinates they would like to hit on the computer's ocean
+  * Turn Results
+    * Updates the target grid with the results of the shot (by triggering the insert peg method) and provides a message like "Miss", or "You hit/sunk my battleship"
+    * Updates the computer's ocean grid by inserting a peg in a ship if necessary
 ### PersonBoard
 Instance Variables
   * Person Target
@@ -65,14 +95,17 @@ Methods
   * Add Sunken Ship
   * Check Sink Count
   * Win Game
-    * When all 5 ships are sunk, it triggers a win for the person, and the end of the game
+    * When all 5 ships are sunk, it triggers a win for the person, and announces the end of the game
 ### ComputerTurn
 Instance Variable
   * Turn Status
     * Toggles to determine whether it is currently the computer's turn
 Method
   * Take Turn
-    * Chooses a set of coordinates for the computer to hit either randomly, or in the vicinity of ships that are partitally hit but not yet sunk
+    * Chooses a set of coordinates for the computer to hit either randomly, or in the vicinity of ships that are partially hit but not yet sunk
+  * Turn Results
+    * Updates the target grid with the results of the shot
+    * Updates the person's ocean grid by inserting a peg in a ship if necessary
 ### ComputerBoard
 Instance Variables
   * Computer Target
@@ -113,7 +146,7 @@ Methods
   * Add Sunken Ship
   * Check Sink Count
   * Win Game
-    * When all 5 ships are sunk, it triggers a win for the computer, and the end of the game
+    * When all 5 ships are sunk, it triggers a win for the computer, and announces the end of the game
 ### Ships
 Instance Variables:
   * Name

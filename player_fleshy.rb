@@ -1,4 +1,6 @@
 class PlayerFleshy
-  def initialize
+  def initialize(person_board, person_turn)
+    @person_board = person_board
+    @person_turn = person_turn
   end
 end
